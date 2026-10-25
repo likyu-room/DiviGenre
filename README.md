@@ -10,7 +10,7 @@
 
 DiviGenre is a Windows app for anyone with a big folder of books, videos, comics, or all of them:
 
-- **Books** (`.txt`, `.epub`): it reads each book and moves it into a genre folder such as 판타지, 무협·동양풍 or 로맨스판타지.
+- **Books** (`.txt`, `.epub`, `.pdf`): it reads each book and moves it into a genre folder on the 소설 (novels) or 일반서 (non-fiction) shelf, such as `소설\판타지` or `일반서\경제·경영`.
 - **Movies and TV shows** (video files): it finds each title on TMDB and moves it into a genre folder under 영화 (movies) or 드라마 (TV shows), such as `영화\SF` or `드라마\리얼리티`.
 - **Comics** (archives): it finds each title on MangaUpdates and moves it into a genre folder under 만화 (comics), such as `만화\액션` or `만화\무협`.
 
@@ -27,6 +27,8 @@ The name is *Divi* + *Genre*: say it fast and you hear *division*.
 - **The genres it comes with are made for Korean web novels** (판타지, 무협·동양풍, 선협, 현대판타지, 괴담·공포, 대체역사, 로맨스, 로맨스판타지, BL, SF). Add your own, or change any genre's name, words and AI description.
 
 - **Sorts by reading the books.** It counts genre words in each book (무림, 헌터, 게이트, 영애…) and reads the title, so a file named only by its title still lands in the right folder.
+- **Tells novels from non-fiction by their dialogue.** A book with little dialogue is weighed against thirteen non-fiction genres (경제·경영, 자기계발, 역사, 과학, 에세이 …) and goes to 일반서; PDFs with text are read too.
+- **Moves earlier genre folders onto the shelf.** A `판타지` folder sorted by an older version moves into `소설` on the next run, as a run of its own you can undo.
 - **Asks an AI when you want it to (optional).** With 심층 분석 on, the books the word rules are unsure of are shown to an AI you choose — Claude, Gemini, OpenAI, or a model running on your own PC. It reads five places in the book, not just chapter 1.
 - **Remembers your choices.** A title you sorted by hand goes to the same genre next time, from any folder.
 - **Finds copies and older versions.** The same work in two files, or 1–200화 next to 1–400화: the newest stays, the others wait in 확인 필요.
