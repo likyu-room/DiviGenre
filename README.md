@@ -2,20 +2,21 @@
 
 # DiviGenre
 
-**Sort your books and your movies and TV shows into genre folders — safely, and with one-click undo.**
+**Sort your books, your movies and TV shows, and your comics into genre folders — safely, and with one-click undo.**
 
 [한국어 설명서](README.ko.md) · [Korean guide as PDF](guide-ko.pdf)
 
-![DiviGenre after sorting a folder of books and videos: the sorted count, one colored tile per genre, 영화 (movies) and 드라마 (shows) among them](images/home-result.png)
+![DiviGenre after sorting a folder of books, videos and comics: the sorted count, one colored tile per genre, 영화 (movies), 드라마 (shows) and 만화 (comics) among them](images/home-result.png)
 
-DiviGenre is a Windows app for anyone with a big folder of books, videos, or both:
+DiviGenre is a Windows app for anyone with a big folder of books, videos, comics, or all of them:
 
 - **Books** (`.txt`, `.epub`): it reads each book and moves it into a genre folder such as 판타지, 무협·동양풍 or 로맨스판타지.
 - **Movies and TV shows** (video files): it finds each title on TMDB and moves it into a genre folder under 영화 (movies) or 드라마 (TV shows), such as `영화\SF` or `드라마\리얼리티`.
+- **Comics** (archives): it finds each title on MangaUpdates and moves it into a genre folder under 만화 (comics), such as `만화\액션` or `만화\무협`.
 
 In this version the book genres are made for **Korean web novels**. You can **add your own genres, and the words that pick them out**, in the settings.
 
-Drop the folder on the window and both are sorted in one go. Whatever it is not sure about waits in 미분류 for you to decide.
+Drop the folder on the window and everything is sorted in one go. Whatever it is not sure about waits in 미분류 for you to decide.
 
 The name is *Divi* + *Genre*: say it fast and you hear *division*.
 
@@ -41,9 +42,17 @@ The name is *Divi* + *Genre*: say it fast and you hear *division*.
 
 Reads `.mp4`, `.mkv`, `.avi`, `.wmv`, `.mov`, `.m4v`, `.ts` and `.webm`.
 
-### Both
+### Comics
 
-- **Lets you decide the hard ones.** 미분류 확인 shows each unsure book or video as a card: what the AI proposed and why, what the word rules guessed and from which words, TMDB's candidates for a video, a preview of the book, and links to look it up on Ridi, KakaoPage, Naver Series or Google. Pick a genre with one click.
+- **Finds each title on MangaUpdates.** It reads the title from the file name (`원피스 01권.zip`), looks it up on MangaUpdates, and moves it into that work's genre folder under 만화. A folder holding the volumes of one series moves as a whole.
+- **Knows a comic by what is inside.** `.cbz`, `.cbr` and `.cb7` are comics; a `.zip`, `.rar` or `.7z` is one when it is mostly pictures. An archive of novels stays with the books.
+- **Sixteen genres** (성인, BL, GL, 무협, 로맨스판타지, 스포츠, 액션, 공포, 스릴러, SF, 로맨스, 역사, 판타지, 개그, 일상, 드라마), each one can be switched off; a work none of them fit goes to 기타.
+- **Asks when unsure.** A title MangaUpdates does not know for sure is asked of your AI when one is connected; otherwise the file waits in 미분류 with MangaUpdates' candidates, and an uncertain folder stays where it is.
+- No key needed; switch it off in the settings. Only the title is sent to MangaUpdates: read from the file name, or the series name a ComicInfo.xml inside the archive gives.
+
+### All of them
+
+- **Lets you decide the hard ones.** 미분류 확인 shows each unsure book, video or comic as a card: what the AI proposed and why, what the word rules guessed and from which words, TMDB's or MangaUpdates' candidates, a preview of the book, and links to look it up on Ridi, KakaoPage, Naver Series, TMDB, MangaUpdates or Google. Pick a genre with one click.
 - **Searches your library.** Look up a title across every folder you sorted, or drop a file to see whether you already have it, and which copy is newer.
 
 ![미분류 확인: a card per book with the AI's proposal and the word rules' guess](images/review.png)
@@ -55,6 +64,7 @@ Open them with the gear at the top right. Nothing changes until you press 저장
 - **도서 장르 (book genres)**: switch genres on or off, add, delete, reorder, or go back to the defaults. Each genre has a name (its folder), its words (one per line; `내공 2` gives a word twice the weight), aliases, and a one-line description the AI reads.
 - **Shared words are flagged.** A word you type that another genre already has shows up under the box at once, and saving asks first: a word in two genres raises both scores, so books between them more often end in 미분류. Words the genres shared to begin with are left alone.
 - **영화·드라마 장르 (movie and show genres)**: TMDB's genres, each one can be switched off. A title none of them fit goes to 기타, or to 미분류 if you switch that off.
+- **만화 (comics)**: sort comics or not, and the sixteen comic genres, each one can be switched off.
 - **AI 연결 (AI connection)**: off, Claude, a Claude plan through Claude Code, Gemini, OpenAI, Ollama or LM Studio on your PC, or a server of your own; a connection test; the page says exactly what is sent.
 - **TMDB**: your free key and a connection test.
 
@@ -64,12 +74,14 @@ Open them with the gear at the top right. Nothing changes until you press 저장
 
 ![Settings: TMDB's movie and show genres, each one can be switched off](images/settings-video.png)
 
+![Settings: comics on or off, and the sixteen comic genres](images/settings-comics.png)
+
 ## Safe by design
 
 - Files are only **moved** inside the folder you chose. Nothing is ever deleted or overwritten.
 - Every run is written down, so **runs can be undone** from 지난 정리, newest first.
-- Your AI and TMDB keys stay on your PC, protected by Windows (DPAPI). The AI and TMDB are only used when you turn them on, and the settings say exactly what is sent.
-- When it starts, the app asks GitHub whether a newer version exists. Nothing about your books or videos is sent.
+- Your AI and TMDB keys stay on your PC, protected by Windows (DPAPI). The AI and TMDB are only used when you turn them on, MangaUpdates only while comics are sorted, and the settings say exactly what is sent.
+- When it starts, the app asks GitHub whether a newer version exists. Nothing about your books, videos or comics is sent.
 
 ## Install
 
@@ -83,6 +95,7 @@ Windows 10 or 11, 64-bit. The app's screens are in Korean.
 
 - Font: [Pretendard](https://github.com/orioncactus/pretendard) by Kil Hyung-jin, SIL Open Font License 1.1.
 - Movie and show data: this product uses the TMDB API but is not endorsed or certified by TMDB.
+- Comic data: [MangaUpdates](https://www.mangaupdates.com).
 - Updates: [Velopack](https://velopack.io) (MIT).
 
 Free to use. This repository holds the releases and the guide; the source code is not published here.
