@@ -246,4 +246,4 @@ AI 키와 TMDB 키는 **이 PC에만** 윈도우 보안 기능으로 잠가 저�
 
 ---
 
-글꼴: Pretendard (SIL Open Font License 1.1) · 영화·드라마 정보: TMDB (This product uses the TMDB API but is not endorsed or certified by TMDB.) · 만화 정보: MangaUpdates (www.mangaupdates.com)
+글꼴: Pretendard (SIL Open Font License 1.1) · 영화·드라마 정보: TMDB (This product uses the TMDB API but is not endorsed or certified by TMDB.) · 만화 정보: MangaUpdates (www.mangaupdates.com) · PDF 읽기: PdfPig (Apache License 2.0) · 앱에 든 오픈 소스 소프트웨어의 사용 조건은 설정 → 정보 → 오픈 소스 알림에 있어요.

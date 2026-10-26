@@ -99,5 +99,7 @@ Windows 10 or 11, 64-bit. The app's screens are in Korean.
 - Movie and show data: this product uses the TMDB API but is not endorsed or certified by TMDB.
 - Comic data: [MangaUpdates](https://www.mangaupdates.com).
 - Updates: [Velopack](https://velopack.io) (MIT).
+- PDF text: [PdfPig](https://github.com/UglyToad/PdfPig) (Apache License 2.0).
+- The full license texts of everything the app ships with are in the app under 설정 → 정보 → 오픈 소스 알림.
 
 Free to use. This repository holds the releases and the guide; the source code is not published here.
